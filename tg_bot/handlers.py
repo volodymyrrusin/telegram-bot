@@ -1,11 +1,11 @@
 import json
-from .services import *
-from pprint import pprint
 from flask import request
+
+from .services import *
 from .models import User
 from tg_bot import db
 
-BOT_TOKEN = '6167922143:AAEaMB7SEMkYE9Fqfiydsw3I1LiLv6gbX3I'
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 TG_BASE_URL = 'https://api.telegram.org/bot'
 
 

@@ -1,10 +1,11 @@
 import requests
 import sqlalchemy.exc
+import re
+from pprint import pprint
+import os
 
 from .models import PhoneBook
 from tg_bot import db
-from pprint import pprint
-import re
 
 
 class WeatherServiceException(Exception):
@@ -89,13 +90,13 @@ class PhonebookServices:
 
 class CurrencyService:
     CURRENCY_URL = 'https://api.twelvedata.com/price?'
-    API_KEY = 'fb016695c5484b369afbf449299c128b'
+    CURRENCY_API_KEY = os.getenv('CURRENCY_API_KEY')
 
     @staticmethod
     def get_currency_rate(ticker):
         params = {
             'symbol': ticker,
-            'apikey': CurrencyService.API_KEY
+            'apikey': CurrencyService.CURRENCY_API_KEY
         }
         res = requests.get(f'{CurrencyService.CURRENCY_URL}', params=params)
         pprint(res.json())
