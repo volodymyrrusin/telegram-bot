@@ -1,0 +1,6 @@
+.env
+venv
+instance/tg-bot-database.sqlite
+.idea/
+tg_bot/__pycache__/
+
