@@ -2,7 +2,8 @@
 About
 ---
 Telegram bot that helps you to get current currency rates, price of the cryptocurrencies as well as the stocks and ETF's.
-You can use the bot [@UnPocoDeBot](https://web.telegram.org/a/#6167922143) on [Telegram](https://telegram.org)
+You can use the bot [@UnPocoDeBot](https://web.telegram.org/a/#6167922143) on [Telegram](https://telegram.org).
+Also you can visit my [site](https://volodymyrrusin.github.io/)
 
 ### Commands
 Currently available commands:
