@@ -3,4 +3,5 @@ venv
 instance/tg-bot-database.sqlite
 .idea/
 tg_bot/__pycache__/
-
+tg_bot/handlers/__pycache__/
+tg_bot/services/__pycache__/

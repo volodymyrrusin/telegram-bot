@@ -15,4 +15,5 @@ class PhoneBook(db.Model):
     user = db.relationship('User')
     name = db.Column(db.String)
     phone_number = db.Column(db.Unicode)
-    __table_args__ = (db.UniqueConstraint('user_id', 'phone_number', name='unique_user_phones'), )
+    __table_args__ = (db.UniqueConstraint('user_id', 'phone_number', name='unique_user_phones'),
+                      db.UniqueConstraint('user_id', 'name', name='unique_user_names'))
