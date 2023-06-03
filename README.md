@@ -1,14 +1,16 @@
 # Currency telegram bot
 ## About
-Telegram bot that helps you to get current currency rates, price of the cryptocurrencies as well as the stocks and ETF's.
+The main purpose of this telegram bot is to get fast and easily prices and some general information of the currencies and other financilal instruments.
+This bot gets information from [twelvedata API](https://twelvedata.com/docs).
 You can use the bot [@UnPocoDeBot](https://web.telegram.org/a/#6167922143) on [Telegram](https://telegram.org).
-Also you can visit my [site](https://volodymyrrusin.github.io/)
+Also you can visit my [site](https://volodymyrrusin.github.io/).
 
 ## Functionality
 This bot can display price of the currencies, cryptocurrencies, stocks and ETF's. Also it can convert currencies and display some general information on the financial instrument. 
 Additional features are working as a phonebook to save, show, delete and list your contacts and to get current weather.
-### Commands
-Currently available commands:
+### Main commands
+#### /commands
+Display list of the available commands
 #### /price
 Display current price of the financial instrument
 
@@ -44,5 +46,3 @@ Show the phoe number of the contact
 Example: `/phonebook show Vova`
 #### /phonebook list
 List all the contacts from the phonebook
-#### /commands
-Display list of the available commands
