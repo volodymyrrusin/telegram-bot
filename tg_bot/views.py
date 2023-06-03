@@ -1,5 +1,8 @@
+from flask import request
+
 from tg_bot import app
-from .handlers import *
+from tg_bot.handlers.message_handler import *
+from tg_bot.handlers.callback_handler import *
 
 
 @app.route('/', methods=["POST"])
