@@ -1,4 +1,5 @@
 import json
+
 from tg_bot.services.currency_service import *
 from tg_bot.services.phonebook_service import *
 from tg_bot.services.weather_service import *
@@ -38,7 +39,7 @@ class CallbackHandler(TelegramHandler):
         match callback_type:
             case 'weather':
                 try:
-                    weather = WeatherService.get_current_weather_by_geo_data(**self.callback_data)
+                    weather = WeatherService.get_current_weather(**self.callback_data)
                 except WeatherServiceException as wse:
                     self.send_message(str(wse))
                 else:
