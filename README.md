@@ -6,7 +6,7 @@ You can use the bot [@UnPocoDeBot](https://web.telegram.org/a/#6167922143) on [T
 
 ## Functionality
 This bot can display price of the currencies, cryptocurrencies, stocks and ETF's. Also it can convert currencies and display some general information on the financial instrument. 
-Additional features are working as a phonebook to save, show, delete and list your contacts and to get current weather.
+Additional features are acting as a phonebook to save, show, delete and list your contacts and getting current weather.
 ### Main commands
 #### /commands
 Display list of the available commands
