@@ -1,4 +1,6 @@
-from tg_bot.handlers.callback_handler import *
+import json
+
+from tg_bot.handlers.callback_handler import TelegramHandler
 from tg_bot.services.currency_service import *
 from tg_bot.services.phonebook_service import *
 from tg_bot.services.weather_service import *
@@ -20,9 +22,9 @@ class MessageHandler(TelegramHandler):
         match self.text.split():
             case['/commands']:
                 self.send_message(commands_list)
-            case '/price', ticker:
+            case '/price', symbol:
                 try:
-                    price = CurrencyService.get_current_price(ticker)
+                    price = CurrencyService.get_current_price(symbol)
                 except CurrencyServiceException as cse:
                     self.send_message(str(cse))
                 else:
@@ -34,27 +36,27 @@ class MessageHandler(TelegramHandler):
                     self.send_message(str(cse))
                 else:
                     self.send_message(converted_amount)
-            case '/quote', ticker:
+            case '/quote', symbol:
                 try:
-                    quote = CurrencyService.get_quote(ticker)
+                    quote = CurrencyService.get_quote(symbol)
                 except CurrencyServiceException as cse:
                     self.send_message(str(cse))
                 else:
                     self.send_message(quote)
             case '/symbol', symbol:
                 try:
-                    symbol_list = CurrencyService.get_symbol(symbol)
+                    symbols_data = CurrencyService.get_symbol(symbol)
                 except CurrencyServiceException as cse:
                     self.send_message(str(cse))
                 else:
                     buttons = []
-                    for item in symbol_list:
-                        test_button = {
+                    for item in symbols_data:
+                        instrument_button = {
                             'text': f'{item.get("symbol")} - {item.get("instrument_name")}',
                             'callback_data': json.dumps(
                                 {'type': 'symbol', 'symbol': item.get('symbol')})
                         }
-                        buttons.append([test_button])
+                        buttons.append([instrument_button])
                     markup = {
                         'inline_keyboard': buttons
                     }
@@ -67,19 +69,19 @@ class MessageHandler(TelegramHandler):
                 else:
                     buttons = []
                     for item in geo_data:
-                        weather_button = {
+                        city_button = {
                             'text': f'{item.get("name")} - {item.get("admin1")}',
                             'callback_data': json.dumps(
                                 {'type': 'weather', 'lat': item.get('latitude'), 'lon': item.get('longitude')})
                         }
-                        buttons.append([weather_button])
+                        buttons.append([city_button])
                     markup = {
                         'inline_keyboard': buttons
                     }
                     self.send_markup_message('Choose a city from a list:', markup)
             case '/phonebook', 'add', name, phone_number:
                 try:
-                    PhonebookServices.add_new_record(self.user.id, name, phone_number)
+                    PhonebookServices.add_record(self.user.id, name, phone_number)
                 except PhonebookServiceException as pse:
                     self.send_message(str(pse))
                 else:

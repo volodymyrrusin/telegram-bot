@@ -12,7 +12,7 @@ class PhonebookServiceException(Exception):
 class PhonebookServices:
 
     @staticmethod
-    def add_new_record(user_id, name, phone_number):
+    def add_record(user_id, name, phone_number):
         if not re.fullmatch(r'^(\+380|380|0)\d{9}$', phone_number):
             raise PhonebookServiceException('Phone number has an incorrect format')
         record = PhoneBook(

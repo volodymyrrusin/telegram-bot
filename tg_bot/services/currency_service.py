@@ -39,9 +39,8 @@ class CurrencyService:
             raise CurrencyServiceException('Cannot get conversion data')
         elif not res.json().get('amount'):
             raise CurrencyServiceException('Currency pair not found')
-        response = f"Rate: {res.json().get('rate')}\n" \
-                   f"Amount: {res.json().get('amount')}"
-        return response
+        return f"Rate: {res.json().get('rate')}\n" \
+               f"Amount: {res.json().get('amount')}"
 
     @staticmethod
     def get_quote(symbol):
