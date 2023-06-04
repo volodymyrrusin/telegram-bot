@@ -1,9 +1,8 @@
 # Currency/stocks telegram bot
 ## About
-The main purpose of the bot is to get fast and easily prices and some general information of the currencies and other financilal instruments.
+The main purpose of the bot is to get fast and easily prices and some general information of the currencies and other financial instruments.
 This bot gets information from [twelvedata API](https://twelvedata.com/docs).
 You can use the bot [@UnPocoDeBot](https://web.telegram.org/a/#6167922143) on [Telegram](https://telegram.org).
-Also you can visit my [site](https://volodymyrrusin.github.io/).
 
 ## Functionality
 This bot can display price of the currencies, cryptocurrencies, stocks and ETF's. Also it can convert currencies and display some general information on the financial instrument. 
