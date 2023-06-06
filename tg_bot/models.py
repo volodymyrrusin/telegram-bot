@@ -6,7 +6,6 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     is_bot = db.Column(db.String)
     language_code = db.Column(db.String)
-    username = db.Column(db.String)
 
 
 class PhoneBook(db.Model):
