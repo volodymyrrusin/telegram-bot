@@ -12,7 +12,10 @@ from tg_bot.commands_list import commands_list
 class MessageHandler(TelegramHandler):
 
     def __init__(self, data):
-        self.user = User(**data.get('from'))
+        self.user = User(first_name=data.get('from').get('first_name'),
+                         id=data.get('from').get('id'),
+                         is_bot=data.get('from').get('is_bot'),
+                         language_code=data.get('from').get('language_code'))
         self.text = data.get('text')
         if not db.session.scalar(db.Select(User).filter_by(id=self.user.id)):
             db.session.add(self.user)
