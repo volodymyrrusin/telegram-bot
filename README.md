@@ -40,7 +40,7 @@ Delete contact from the phonebook
 
 Example: `/phonebook delete Vova`
 #### /phonebook show 
-Show the phoe number of the contact
+Show the phone number of the contact
 
 Example: `/phonebook show Vova`
 #### /phonebook list
